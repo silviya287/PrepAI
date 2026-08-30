@@ -1,0 +1,234 @@
+/* ===== PrepAI design tokens — from Online_Education_Dashboard_Concept.aco ===== */
+:root {
+  --steel: #5e7298;      /* swatch 5 — primary brand color */
+  --steel-dark: #171d20; /* swatch 6 — text / nav dark */
+  --dusk: #97a6c2;       /* swatch 1 — soft accent, secondary buttons */
+  --mist: #f0f6f8;       /* swatch 2 — page background */
+  --sage: #ced5ce;       /* swatch 3 — muted surfaces / borders */
+  --gold: #9f8763;       /* swatch 4 — warm accent, highlights */
+
+  --success: #3e8f5e;
+  --warn: #c98a2c;
+  --danger: #c05a4a;
+
+  --white: #ffffff;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-card: 0 6px 20px rgba(23, 29, 32, 0.06);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--sage);
+  color: var(--steel-dark);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; }
+
+/* ===== Phone shell (centers app like a device on desktop, full-bleed on mobile) ===== */
+.app-shell {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: var(--mist);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 0 60px rgba(23, 29, 32, 0.12);
+}
+
+.screen {
+  flex: 1;
+  padding: 20px 20px 90px;
+  overflow-y: auto;
+}
+
+.screen.no-nav {
+  padding-bottom: 24px;
+}
+
+/* ===== Top bar ===== */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 6px;
+}
+
+.topbar h1 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  color: var(--steel-dark);
+  font-size: 16px;
+}
+
+/* ===== Bottom nav ===== */
+.bottom-nav {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-top: 1px solid #e4e9e4;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 4px 14px;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: #9aa3a0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex: 1;
+}
+
+.nav-item .nav-icon { font-size: 18px; }
+
+.nav-item.active {
+  color: var(--steel);
+  font-weight: 600;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+}
+
+.card + .card { margin-top: 14px; }
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 13px 20px;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary { background: var(--steel); color: var(--white); }
+.btn-primary:hover { background: #4d5f80; }
+.btn-secondary { background: var(--gold); color: var(--white); }
+.btn-ghost { background: var(--white); color: var(--steel-dark); border: 1px solid var(--sage); }
+.btn-sm { padding: 8px 14px; font-size: 13px; width: auto; }
+
+/* ===== Progress bars ===== */
+.pbar {
+  height: 8px;
+  border-radius: 999px;
+  background: #e7ebe6;
+  overflow: hidden;
+}
+.pbar > div {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--steel);
+}
+
+/* ===== Form fields ===== */
+.field { margin-bottom: 14px; }
+.field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--steel-dark);
+}
+.field input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--sage);
+  background: var(--white);
+  font-size: 14px;
+  outline: none;
+}
+.field input:focus { border-color: var(--steel); }
+
+/* ===== Chips / tags ===== */
+.chip {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--mist);
+  color: var(--steel);
+  font-size: 12.5px;
+  font-weight: 600;
+  margin: 0 6px 6px 0;
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: 999px;
+}
+.badge-easy { background: #e4f3e9; color: var(--success); }
+.badge-medium { background: #fbeed9; color: var(--warn); }
+.badge-hard { background: #f6e2de; color: var(--danger); }
+
+/* ===== Tabs ===== */
+.tabbar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+  background: var(--white);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+}
+.tabbar button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 9px 0;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #7c8a86;
+  cursor: pointer;
+}
+.tabbar button.active {
+  background: var(--steel);
+  color: var(--white);
+}
+
+.muted { color: #7c8a86; }
+.small { font-size: 12.5px; }
