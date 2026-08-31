@@ -9,10 +9,10 @@ def normalize_skills(skills):
     }
 
 
-def analyze_skill_gap(student_id, target_role, current_skills, required_skills):
+def analyze_skill_gap(trainee_id, target_role, current_skills, required_skills):
     """
-    Compare a student's current skill levels with the
-    skill levels required for a target role.
+    Compare a trainee's current competency levels with the
+    competency levels required for a target role.
     """
 
     current_skills = normalize_skills(current_skills)
@@ -54,7 +54,7 @@ def analyze_skill_gap(student_id, target_role, current_skills, required_skills):
         )
 
     return {
-        "student_id": student_id,
+        "trainee_id": trainee_id,
         "target_role": target_role,
         "matched_skills": matched_skills,
         "weak_skills": weak_skills,
