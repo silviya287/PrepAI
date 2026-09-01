@@ -1,4 +1,4 @@
-from skill_gap import analyze_skill_gap
+from ai_engine.skill_gap import analyze_skill_gap
 
 
 student_id = 101
